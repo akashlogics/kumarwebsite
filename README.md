@@ -1,42 +1,26 @@
 # Kumar & Co — Civil Engineers & Builders
 
-A modern, responsive website designed for **Kumar & Co — Civil Engineers & Builders**, with a strong focus on civil engineering, highway infrastructure, construction work, and real project photography.
+Static website (no framework, no build step). Open `index.html` or deploy the folder as-is
+(GitHub Pages, Netlify, Vercel, Cloudflare Pages).
 
-The website is intentionally built without a framework or build system, keeping it lightweight, fast, easy to maintain, and simple to deploy.
+## Structure
+```
+index.html          all content (about, services, projects, certificates, clients, contact)
+css/style.css       design
+js/config.js        ★ WhatsApp number & contact details — edit this
+js/main.js          scroll animation, lightbox, WhatsApp enquiry
+assets/frames/      249 WebP frames of the construction animation (f001 … f249)
+assets/images/      project photos + logo mark
+assets/certs/       certificates
+assets/fonts/       Montserrat + Inter (self-hosted)
+```
 
-## Overview
+## Before going live
+1. Set `whatsappNumber` in `js/config.js` (e.g. `"919876543210"`).
+2. Confirm project names / captions in the "Our work" section of `index.html`.
+3. Optional: phone, email, address, GST and UDYAM in `js/config.js`.
 
-The website presents Kumar & Co through a visual, story-driven experience rather than a conventional corporate template.
-
-It includes:
-
-- Cinematic highway-inspired introduction
-- Company overview
-- Civil engineering and construction services
-- Real project and site photography
-- Interactive project gallery
-- Client and recognition section
-- Direct WhatsApp enquiry flow
-- Responsive layouts for desktop, tablet, and mobile
-- Smooth but subtle scroll-based interactions
-
-The design aims to feel **professional, confident, and visually distinctive**, while keeping the company's actual work and information at the centre of the experience.
-
-## Project Structure
-
-```text
-kumarwebsite/
-│
-├── index.html
-│
-├── css/
-│   └── style.css
-│
-├── js/
-│   ├── config.js
-│   └── main.js
-│
-├── assets/
-│   └── images/
-│
-└── README.md
+## How the animation works
+The hero section is a tall scroll track with a sticky canvas. Scroll position maps to frame
+number; five "pages" (Welcome, About, Services, Our promise, Completed) fade in and out over it.
+Phones load every 2nd frame to save data.
